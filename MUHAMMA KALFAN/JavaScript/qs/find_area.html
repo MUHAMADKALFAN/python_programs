@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Area</h2>
+    Enter the width: <input id="n">
+    Enter the height: <input id="m">
+    <br><br>
+    <button onclick="area()">Area</button>
+    <p id="r"></p>
+    <script>
+        function area()
+        {
+            var n,m,a;
+            n=document.getElementById("n").value;
+            m=document.getElementById("m").value;
+            a=n*m;
+            document.getElementById("r").innerHTML="The Area is"+a;
+        }
+    </script>
+</body>
+</html>

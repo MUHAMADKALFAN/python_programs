@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    Enter the Username:<input id="n"><span id="k" style="color:red"></span>
+    <br><br>
+    Enter the password:<input id="m"><span id="p" style="color:red" ></span>
+    <br><br>
+    conform password:<input id="pc"><span id="c" style="color:red"></span>
+    <br><br>
+    Enter the mobile.no:<input id="mob"><span id="mno" style="color:red"></span>
+    <br><br>
+    Enter mailId:<input id="ma"><span id="il" style="color:red"></span>
+    <br><br>
+    <button onclick='valid()' formaction="form_creation.html">submit</button>
+</form>
+<script>
+    function valid()
+    {
+        var n,m,pc,mob,ma;
+        var mp=/^[9876][0-9]{9}$/,me=/[a-z0-9]+[-#$%^&*]?[a-z0-9]+[@][a-z0-9]+[-#$%^&*]?[a-z0-9]+[.][a-z]{2,3}/;
+        n=document.getElementById("n").value;
+        m=document.getElementById("m").value;
+        pc=document.getElementById("pc").value;
+        mob=document.getElementById("mob").value;
+        ma=document.getElementById("ma").value;
+        var c=0;
+        if(n=="")
+        {
+            document.getElementById("k").innerHTML="field required";
+            c++;
+        }
+        if(m.length<8)
+        {
+            document.getElementById("p").innerHTML="requires 8 or more character/symbols";
+            c++;
+        }
+        if(m!=pc)
+        {
+            document.getElementById("c").innerHTML="error in password";
+            c++;
+        }
+        if(!(mob.match(mp)))
+        { 
+            document.getElementById("mno").innerHTML="not required mobile number";
+            c++;
+        }
+        if(!(ma.match(me)))
+        {
+            document.getElementById("il").innerHTML="not required mail id";
+            c++;
+        }
+        if(c==1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+}
+</script>
+</body>
+</html

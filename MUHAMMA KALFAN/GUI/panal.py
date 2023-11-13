@@ -1,0 +1,10 @@
+import tkinter
+w=tkinter.Tk()
+w.geometry('250x250')
+l1=tkinter.Label(text='hallo')
+e1=tkinter.Entry(text='hi')
+# e1.pack()
+# l1.pack()
+e1.grid(row=0,column=2,padx=20)
+l1.grid(row=0,column=0)
+w.mainloop()
